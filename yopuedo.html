@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video en Loop</title>
+    <style>
+        /* Reset de márgenes y relleno */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* El cuerpo se asegura de ocupar toda la pantalla */
+        body, html {
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+        }
+
+        /* Estilo para el video */
+        video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            object-fit: cover; /* Ajusta el video para cubrir toda la pantalla */
+            background-color: #000;
+        }
+
+        /* Mensaje para navegadores que no soportan video */
+        .no-support {
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <video autoplay loop muted playsinline>
+        <source src="aguipuntos.mp4" type="video/mp4">
+        <div class="no-support">
+            Tu navegador no soporta la reproducción de video.
+        </div>
+    </video>
+</body>
+</html>
